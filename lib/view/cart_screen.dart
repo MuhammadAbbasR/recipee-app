@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:recipeapp/viewmodel/cartvm.dart';
-
 import '../viewmodel/auth_vm.dart';
 import 'check_out_failed.dart';
 import 'check_out_sucess.dart';
@@ -169,12 +168,9 @@ class CartScreen extends StatelessWidget {
                     ),
                   ),
 
-                  // Delete button
                   IconButton(
                     onPressed: () {
                       providervm.removeFromCart(recipee);
-
-
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
@@ -200,7 +196,6 @@ class CartScreen extends StatelessWidget {
         },
       ),
 
-      // Floating elongated Checkout button
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: providervm.recipeeList.isEmpty
           ? null

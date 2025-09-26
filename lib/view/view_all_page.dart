@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:recipeapp/view/recipe_detail_screen_final.dart';
-
-
 import '../model/recipeemodel.dart';
 import '../service/network/networkapi.dart';
 
 
 class ViewAllPage extends StatefulWidget {
   const ViewAllPage({super.key});
-
   @override
   State<ViewAllPage> createState() => _ViewAllPageState();
 }
 
 class _ViewAllPageState extends State<ViewAllPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +21,8 @@ class _ViewAllPageState extends State<ViewAllPage> {
           title: const Text("All Products",
           style: TextStyle(
             color: Colors.white
-          ),),
+          ),
+          ),
         centerTitle: true,
       ),
       body: FutureBuilder<List<RecipeeModel>>(

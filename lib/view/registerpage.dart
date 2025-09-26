@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../viewmodel/auth_vm.dart';
 import '../widget/MyButton.dart';
 import '../widget/textfield.dart';
@@ -92,8 +91,6 @@ class SignUpScreen extends StatelessWidget {
                             ),
                           );
 
-                          // Navigate to login or home
-                          // Navigator.pushReplacementNamed(context, '/login');
                         } else if (vm.status == AuthStatus.error) {
 
                           ScaffoldMessenger.of(context).showSnackBar(

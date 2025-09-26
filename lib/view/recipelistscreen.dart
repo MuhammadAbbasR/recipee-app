@@ -145,7 +145,7 @@ class _RecipeListState extends State<RecipeList> {
                     ),
                   ),
 
-                  // ✅ Tabs
+
                   const TabBar(
                     isScrollable: true,
                     labelColor: Colors.green,
@@ -186,7 +186,7 @@ class _RecipeListState extends State<RecipeList> {
     );
   }
 
-  // ✅ Same _buildRecipeList method you already have
+
   static Widget _buildRecipeList(List<RecipeeModel> recipes) {
     if (recipes.isEmpty) {
       return const Center(child: Text("No recipes in this category"));

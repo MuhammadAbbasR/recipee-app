@@ -40,7 +40,7 @@ class _RecipeDetailScreenFinalState extends State<RecipeDetailScreenFinal> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  duration: const Duration(seconds: 3), // auto-dismiss
+                  duration: const Duration(seconds: 3),
                 ),
               );
             },
@@ -83,7 +83,7 @@ class _RecipeDetailScreenFinalState extends State<RecipeDetailScreenFinal> {
                 Positioned(
                   right: 0,
                   left: 0,
-                  top: MediaQuery.of(context).size.height/2.2, // match image height
+                  top: MediaQuery.of(context).size.height/2.2,
                   child: Container(
                     width: double.infinity,
                     padding: EdgeInsets.all(20),
@@ -248,7 +248,7 @@ class _RecipeDetailScreenFinalState extends State<RecipeDetailScreenFinal> {
                     SizedBox(
                       height: 10,
                     ),
-                   // Text(widget.recipeeModel.instruction as String),
+
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

@@ -2,10 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-
-import 'package:recipeapp/view/login_screen.dart';
-import 'package:recipeapp/view/mainscreen.dart';
-import 'package:recipeapp/view/splash_screen.dart';
 import 'package:recipeapp/viewmodel/auth_vm.dart';
 import 'package:recipeapp/viewmodel/cartvm.dart';
 import 'package:recipeapp/viewmodel/recipevm.dart';
@@ -51,7 +47,7 @@ class RecipeApp extends StatelessWidget {
         primarySwatch: Colors.teal,
         useMaterial3: true,
       ),
-      initialRoute: "/",                // start with splash
+      initialRoute: "/",
       onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }

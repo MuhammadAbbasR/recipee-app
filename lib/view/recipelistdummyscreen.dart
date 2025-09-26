@@ -13,8 +13,6 @@ import '../widget/banner.dart';
 class RecipeDummyListScreen extends StatefulWidget {
   const RecipeDummyListScreen({super.key});
 
-
-
   @override
   State<RecipeDummyListScreen> createState() => _RecipeDummyListScreenState();
 }
@@ -22,7 +20,7 @@ class RecipeDummyListScreen extends StatefulWidget {
 class _RecipeDummyListScreenState extends State<RecipeDummyListScreen> {
   @override
   void initState() {
-    // TODO: implement initState
+
     super.initState();
     Provider.of<RecipeVm>(context,listen: false).loadFoodList();
   }
@@ -103,7 +101,7 @@ class _RecipeDummyListScreenState extends State<RecipeDummyListScreen> {
                    ),
                  ),
 
-                 // Recipe list
+
                  Expanded(
                    child: ListView.builder(
                      itemCount: filteredRecipes.length,

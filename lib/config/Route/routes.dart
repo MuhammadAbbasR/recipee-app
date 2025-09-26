@@ -38,7 +38,7 @@ class AppRoutes {
       case RoutesName.successCheckoutRoute:
         return MaterialPageRoute(builder: (_) => CheckoutSuccessPage());
 
-    // 404 fallback
+
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

@@ -48,8 +48,6 @@ class _MainScreenState extends State<MainScreen> {
               ,color: Colors.white,
               ),
               label: "Recipes",
-
-
           ),
 
           BottomNavigationBarItem(

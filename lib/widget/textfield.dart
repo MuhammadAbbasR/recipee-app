@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +17,7 @@ import 'package:flutter/material.dart';
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: TextField(

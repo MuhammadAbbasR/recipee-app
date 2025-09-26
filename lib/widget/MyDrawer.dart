@@ -33,12 +33,12 @@ class MyDrawer extends StatelessWidget {
     padding: const EdgeInsets.only(left: 20),
     child: Consumer<AuthVm>(
     builder: (context, authVm, child) {
-    final isLoggedIn = authVm.user != null; // 👈 check login status
+    final isLoggedIn = authVm.user != null;
 
     return ListTile(
     onTap: () async {
     if (isLoggedIn) {
-    // Logout flow
+
     await authVm.logout();
 
 
@@ -52,7 +52,7 @@ class MyDrawer extends StatelessWidget {
     ),
     );
     } else {
-    // Login flow
+
     Navigator.pushNamed(context, RoutesName.loginRoute);
     }
     },

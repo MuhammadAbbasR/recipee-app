@@ -71,7 +71,7 @@ class LoginScreen extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
-                              duration: const Duration(seconds: 3), // auto-dismiss
+                              duration: const Duration(seconds: 3),
                             ),
                           );
 
@@ -89,7 +89,7 @@ class LoginScreen extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
-                              duration: const Duration(seconds: 3), // auto-dismiss
+                              duration: const Duration(seconds: 3),
                             ),
                           );
                         }
