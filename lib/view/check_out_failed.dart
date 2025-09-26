@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 
+import '../config/Route/routes_name.dart';
+
 class CheckoutFailedPage extends StatelessWidget {
   const CheckoutFailedPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Checkout")),
+      appBar: AppBar(
+          title: const Text("Checkout"),
+          centerTitle: true,
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.green,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -20,11 +27,7 @@ class CheckoutFailedPage extends StatelessWidget {
 
             ElevatedButton(
               onPressed: () {
-                // Navigate to Login Page
-              //  Navigator.push(
-              //    context,
-              //    MaterialPageRoute(builder: (_) => const LoginPage()),
-              //  );
+                Navigator.pushNamed(context, RoutesName.loginRoute);
               },
               child: const Text("Go to Login"),
             ),

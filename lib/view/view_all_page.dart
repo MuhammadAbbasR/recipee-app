@@ -107,15 +107,7 @@ class _ViewAllPageState extends State<ViewAllPage> {
                             ),
                             Text("${recipe.rating}"),
                             Text("/5"),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "${recipe.reviewCount} Reviews",
-                              style: TextStyle(
-                                color: Colors.grey,
-                              ),
-                            ),
+
                           ],
                         ),
                       ),

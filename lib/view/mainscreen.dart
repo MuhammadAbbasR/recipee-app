@@ -17,9 +17,7 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _screens = const [
    RecipeList(),
- //   RecipeDummyListScreen(),
-   // ViewAllPage(),
-    //RecipeeScreen(),
+
     CartScreen(),
 
   ];
@@ -33,15 +31,14 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_selectedIndex],
+      body: IndexedStack(
+          index: _selectedIndex,
+          children: _screens),
 
       bottomNavigationBar: BottomNavigationBar(
         showSelectedLabels: true,
         showUnselectedLabels: false,
-        selectedLabelStyle: TextStyle(
-          color: Colors.black,
-          fontWeight: FontWeight.bold
-        ),
+       selectedItemColor: Colors.white,
         backgroundColor: Colors.green,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
@@ -51,6 +48,7 @@ class _MainScreenState extends State<MainScreen> {
               ,color: Colors.white,
               ),
               label: "Recipes",
+
 
           ),
 

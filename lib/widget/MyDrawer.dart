@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:recipeapp/viewmodel/auth_vm.dart';
+
+import '../config/Route/routes_name.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -25,22 +29,48 @@ class MyDrawer extends StatelessWidget {
           ),
           ),
 
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: ListTile(
-              title: Text("LOGOUT",
-              style: TextStyle(
-                color: Colors.white
-              ),
-              ),
-              leading: Icon(
-                Icons.logout,
-                color: Colors.white,
-              ),
-            ),
-          )
+    Padding(
+    padding: const EdgeInsets.only(left: 20),
+    child: Consumer<AuthVm>(
+    builder: (context, authVm, child) {
+    final isLoggedIn = authVm.user != null; // 👈 check login status
 
-        ],
+    return ListTile(
+    onTap: () async {
+    if (isLoggedIn) {
+    // Logout flow
+    await authVm.logout();
+
+
+
+    ScaffoldMessenger.of(context).showSnackBar(
+    const SnackBar(
+    content: Text("Logged out successfully"),
+    backgroundColor: Colors.teal,
+    behavior: SnackBarBehavior.floating,
+    duration: Duration(seconds: 2),
+    ),
+    );
+    } else {
+    // Login flow
+    Navigator.pushNamed(context, RoutesName.loginRoute);
+    }
+    },
+    title: Text(
+    isLoggedIn ? "LOGOUT" : "LOGIN",
+    style: const TextStyle(color: Colors.white),
+    ),
+    leading: Icon(
+    isLoggedIn ? Icons.logout : Icons.login,
+    color: Colors.white,
+    ),
+    );
+    },
+    ),
+    )
+
+
+    ],
       ),
 
 

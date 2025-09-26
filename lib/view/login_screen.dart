@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:recipeapp/config/Route/routes_name.dart';
+import 'package:recipeapp/view/registerpage.dart';
 import 'package:recipeapp/widget/MyButton.dart';
 import 'package:recipeapp/widget/textfield.dart';
 
 import '../viewmodel/auth_vm.dart';
+import 'check_out_sucess.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -107,8 +109,8 @@ class LoginScreen extends StatelessWidget {
                         const SizedBox(width: 4),
                         GestureDetector(
                           onTap: () {
-                            // Navigate to register screen
-                          //  Navigator.push(context, RoutesName.signupRoute);
+
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => SignUpScreen ()));
 
                           },
                           child: const Text(

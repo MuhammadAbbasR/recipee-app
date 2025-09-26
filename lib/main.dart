@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'package:recipeapp/view/login_screen.dart';
@@ -44,6 +45,9 @@ class RecipeApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Recipe App',
       theme: ThemeData(
+        textTheme: GoogleFonts.poppinsTextTheme(
+          Theme.of(context).textTheme,
+        ),
         primarySwatch: Colors.teal,
         useMaterial3: true,
       ),
