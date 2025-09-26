@@ -173,10 +173,21 @@ class CartScreen extends StatelessWidget {
                   IconButton(
                     onPressed: () {
                       providervm.removeFromCart(recipee);
+
+
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content:
-                          Text("${recipee.name} removed from cart"),
+                          content: Text(
+                              "${recipee.name} removed from cart",
+                            style: const TextStyle(color: Colors.white, fontSize: 16),
+                          ),
+                          backgroundColor: Colors.greenAccent,
+                          behavior: SnackBarBehavior.floating,
+                          margin: const EdgeInsets.all(12),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          duration: const Duration(seconds: 3), // auto-dismiss
                         ),
                       );
                     },

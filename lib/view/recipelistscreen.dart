@@ -53,13 +53,13 @@ class _RecipeListState extends State<RecipeList> {
               return const Center(child: Text("No recipes found"));
             }
 
-            final recipes = vm.response.data!;
+            final recipes = vm.response.data ?? [];
 
             return SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // ✅ Green Container
+
                   Container(
                     width: double.infinity,
                     height: 170,
@@ -109,7 +109,7 @@ class _RecipeListState extends State<RecipeList> {
                     ),
                   ),
 
-                  // ✅ Categories + View All
+
                   Padding(
                     padding: const EdgeInsets.symmetric(
                         vertical: 15, horizontal: 8),
@@ -263,10 +263,22 @@ class _RecipeListState extends State<RecipeList> {
                             onPressed: () {
                               Provider.of<CartVm>(context, listen: false)
                                   .addToCart(recipee);
+
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
-                                    content: Text(
-                                        "${recipee.name} added to cart")),
+                                  content: Text(
+
+                                    "${recipee.name} added to cart",
+                                    style: const TextStyle(color: Colors.white, fontSize: 16),
+                                  ),
+                                  backgroundColor: Colors.greenAccent,
+                                  behavior: SnackBarBehavior.floating,
+                                  margin: const EdgeInsets.all(12),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  duration: const Duration(seconds: 3), // auto-dismiss
+                                ),
                               );
                             },
                             icon: const Icon(Icons.add_shopping_cart,

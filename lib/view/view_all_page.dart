@@ -48,10 +48,10 @@ class _ViewAllPageState extends State<ViewAllPage> {
           return GridView.builder(
             padding: const EdgeInsets.all(10),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, // 2 items per row
+              crossAxisCount: 2,
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
-              childAspectRatio: 0.75, // adjust card height
+              childAspectRatio: 0.75,
             ),
             itemCount: recipes.length,
             itemBuilder: (context, index) {
@@ -124,21 +124,7 @@ class _ViewAllPageState extends State<ViewAllPage> {
                         padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 4),
                         child: Row(
                           children: [
-                            Icon(
-                              Icons.flash_on,
-                              size: 16,
-                              color: Colors.grey,
-                            ),
-                            Text(
-                              "${recipe.caloriesPerServing} Cal",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  color: Colors.grey),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
+
                             Icon(
                               Icons.punch_clock,
                               size: 20,

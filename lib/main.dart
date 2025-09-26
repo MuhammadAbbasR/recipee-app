@@ -1,13 +1,29 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:recipeapp/view/login_screen.dart';
 import 'package:recipeapp/view/mainscreen.dart';
+import 'package:recipeapp/view/splash_screen.dart';
 import 'package:recipeapp/viewmodel/auth_vm.dart';
 import 'package:recipeapp/viewmodel/cartvm.dart';
 import 'package:recipeapp/viewmodel/recipevm.dart';
 
-void main() {
+import 'config/Route/routes.dart';
+
+void main() async{
+
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+        apiKey: 'AIzaSyAAVxxqWVxb_0yYNW9zwnHONjh71GUmGZg',
+        appId: '1:222135710420:android:1c693bdcba5e2047e04141',
+        messagingSenderId: '222135710420',
+        projectId: 'practicefyp-c3931',
+        storageBucket: 'practicefyp-c3931.firebasestorage.app'),
+  );
+
   runApp(
     MultiProvider(
       providers: [
@@ -19,7 +35,6 @@ void main() {
     ),
   );
 }
-
 class RecipeApp extends StatelessWidget {
   const RecipeApp({super.key});
 
@@ -32,7 +47,8 @@ class RecipeApp extends StatelessWidget {
         primarySwatch: Colors.teal,
         useMaterial3: true,
       ),
-      home:  MainScreen(),
+      initialRoute: "/",                // start with splash
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }

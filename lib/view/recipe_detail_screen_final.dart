@@ -29,8 +29,19 @@ class _RecipeDetailScreenFinalState extends State<RecipeDetailScreenFinal> {
                   .addToCart(widget.recipeeModel);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                    content: Text(
-                        "${widget.recipeeModel.name} added to cart")),
+                  content: Text(
+
+                      "${widget.recipeeModel.name} added to cart",
+                    style: const TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                  backgroundColor: Colors.greenAccent,
+                  behavior: SnackBarBehavior.floating,
+                  margin: const EdgeInsets.all(12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  duration: const Duration(seconds: 3), // auto-dismiss
+                ),
               );
             },
             
@@ -252,12 +263,12 @@ class _RecipeDetailScreenFinalState extends State<RecipeDetailScreenFinal> {
                         ListView.builder(
                             physics: NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
-                            itemCount: widget.recipeeModel.instruction.length,
+                            itemCount: widget.recipeeModel.instructions.length,
                             itemBuilder: (context,index){
                               return ListTile(
                                 leading: Icon(Icons.play_circle,
                                 color: Colors.green,),
-                                title: Text(widget.recipeeModel.instruction[index]),
+                                title: Text(widget.recipeeModel.instructions[index]),
                               );
                             }),
                       ],

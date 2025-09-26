@@ -18,6 +18,7 @@ class RecipeVm extends ChangeNotifier {
       response=ApiResponse.completed(value);
     }
     catch(e){
+      print(e.toString());
       response=ApiResponse.error(e.toString());
     }
 
